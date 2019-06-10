@@ -4,11 +4,11 @@ CFLAGS = -Wall -g
 
 all: demo
 
-demo: mymain.o Primary_Hash_Functions.o Primary_Hash_Utilities.o Secondary_Hash_Functions.o Secondary_Hash_Utilities.o BF_64.a 
+demo: ht_main_test.o Primary_Hash_Functions.o Primary_Hash_Utilities.o Secondary_Hash_Functions.o Secondary_Hash_Utilities.o BF_64.a 
 	$(CC) -o demo mymain.o Primary_Hash_Functions.o Primary_Hash_Utilities.o Secondary_Hash_Functions.o Secondary_Hash_Utilities.o BF_64.a -static $(CFLAGS)
 
-mymain.o: mymain.c BF.h Primary_Hash_Functions.h Secondary_Hash_Functions.h
-	$(CC) -c mymain.c $(CFLAGS)
+mymain.o: ht_main_test.c BF.h Primary_Hash_Functions.h Secondary_Hash_Functions.h
+	$(CC) -c ht_main_test.c $(CFLAGS)
 
 Primary_Hash_Functions.o: Primary_Hash_Functions.c Primary_Hash_Utilities.h
 	$(CC) -c Primary_Hash_Functions.c $(CFLAGS)
@@ -24,7 +24,7 @@ Secondary_Hash_Utilities.o: Secondary_Hash_Utilities.c Secondary_Hash_Utilities.
 
 
 clean: 
-	rm demo mymain.o Primary_Hash_Functions.o Primary_Hash_Utilities.o Secondary_Hash_Functions.o Secondary_Hash_Utilities.o
+	rm demo ht_main_test.o Primary_Hash_Functions.o Primary_Hash_Utilities.o Secondary_Hash_Functions.o Secondary_Hash_Utilities.o
 
 
 
